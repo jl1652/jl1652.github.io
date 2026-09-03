@@ -8,10 +8,44 @@ Colorblind safe color palette from colorbrewer2.org.
 */
 
 body {
-background-color: #ffffbf;
-color: #abd9e9;
+background-color: #92c5de;
+color: #0571b0;
 text-align: center;
+margin: 0;
 }
+/*Modified the background behind the body container*/
 h1 {
-color: #2c7bb6;
+color: #fdae61;
 }
+/*Changed the font color of the header*/
+#body-container {
+background-color: #f7f7f7;
+max-width: 1000px;
+margin: auto;
+min-height: 100vh;
+border: 2px solid #f7f7f7;
+border-radius: 25px;
+overflow: hidden;
+/*Added a container for the body of the text*/
+#header {
+background-color: #0571b0;
+}
+/*Changed background color of the header*/
+#profile-picture {
+float: left;
+}
+/*<Moved the image to the left as afloating element*/
+#welcome-text {
+padding-top: 25px;
+font-size: 25px;
+}
+
+#welcome-text {
+}
+#research-interests {
+text-align: left;
+font-size: 25px;
+position: relative;
+left: 50px;
+}
+/*Aligned the text to the left and changed the font, positioned relative to other elements*/
