@@ -13,11 +13,11 @@ color: #0571b0;
 text-align: center;
 margin: 0;
 }
-/*Modified the background behind the body container*/
+/* For behinder header elements: Modified the background behind the body container*/
 h1 {
 color: #fdae61;
 }
-/*Changed the font color of the header*/
+/*For header: Changed the font color of the header*/
 #body-container {
 background-color: #f7f7f7;
 max-width: 1000px;
@@ -26,15 +26,15 @@ min-height: 100vh;
 border: 2px solid #f7f7f7;
 border-radius: 25px;
 overflow: hidden;
-/*Added a container for the body of the text*/
+/* For body container: Added a container for the body of the text*/
 #header {
 background-color: #0571b0;
 }
-/*Changed background color of the header*/
+/*Background of header: Changed background color of the header*/
 #profile-picture {
 float: left;
 }
-/*<Moved the image to the left as afloating element*/
+/*Moved the profile picture: <Moved the image to the left as afloating element*/
 #welcome-text {
 padding-top: 25px;
 font-size: 25px;
