@@ -1,12 +1,13 @@
+let user_name = window.prompt("Please enter your name", "Type your username here");
+document.getElementById("greeting").textContent = "Hello, welcome " + user_name + "!";
+
+/*
 arr = ["Mael","Eric","Randall","James"];
 for (var i=0; i < arr.length; i++)
 {
 document.writeln(arr[i],"<br>");
 }
-
-user_name = window.prompt("Please enter your name", "Type your name here");
-document.write(user_name);
-
+*/
 
 //document.write("Where is my JS code?");
 //window.alert(5 + 6);
