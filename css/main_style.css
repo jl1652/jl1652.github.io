@@ -26,6 +26,7 @@ min-height: 100vh;
 border: 2px solid #f7f7f7;
 border-radius: 25px;
 overflow: hidden;
+}
 /* For body container: Added a container for the body of the text*/
 #header {
 background-color: #0571b0;
@@ -40,8 +41,6 @@ padding-top: 25px;
 font-size: 25px;
 }
 
-#welcome-text {
-}
 #research-interests {
 text-align: left;
 font-size: 25px;
@@ -49,3 +48,13 @@ position: relative;
 left: 50px;
 }
 /*Aligned the text to the left and changed the font, positioned relative to other elements*/
+
+#copyright {
+bottom: 20px;
+margin: 0;
+padding:0;
+text-align: center;
+position: relative;
+left:50%;
+transform: translateX(-50%) translateY(-50%);
+}
