@@ -1,3 +1,9 @@
+var webmaps =
+[
+["Touch Terrain", "https://touchterrain.geol.iastate.edu/", "A tool to extract DEM's for 3D printing."],
+["Cesium", "https://cesium.com/", "A application to integrate tilesets into projects."]
+];
+
 function welcome()
 {
 let a = "Please enter your name.";
@@ -8,6 +14,24 @@ message = "<h1>Hello, welcome to my webpage, " + user_name + "!</h1>"
 return message
 }
 document.write(welcome());
+
+function webmap_table()
+{
+  document.write("<table width=100%>");
+  for (var row=0; row < webmaps.length; row++)
+  {
+    document.write("<tr>");
+    for (var column=0; column < webmaps[0].length; column++)
+  {
+    document.write("<td>" + webmaps[row][column] + "</td>");
+  }
+  document.write("</tr>");
+  }
+  document.write("</table>");
+  return "";
+}
+
+
 //document.write(message);
 
 //let user_name = window.prompt("Please enter your name", "Type your username here");
