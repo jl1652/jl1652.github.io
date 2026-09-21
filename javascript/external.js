@@ -1,7 +1,7 @@
 var webmaps =
 [
-["Touch Terrain", "https://touchterrain.geol.iastate.edu/", "A tool to extract DEM's for 3D printing."],
-["Cesium", "https://cesium.com/", "A application to integrate tilesets into projects."]
+["Touch Terrain", "https://touchterrain.geol.iastate.edu/", "A tool to exact DEM's for 3D printing."],
+["Cesium", "https://cesium.com/", "A toolset for integrating tileset into projects for 3d visualization."]
 ];
 
 function welcome()
