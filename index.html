@@ -4,7 +4,6 @@
   <title>Josh Lambert</title>
   <!-- All Styling for this HTML document are contained in this external css
   file -->
-
   <link rel="stylesheet" type="text/css" href="css/main_style.css">
 <!--   <script>
    document.write("Where is my JS code?");
@@ -41,6 +40,19 @@
     </ol>
    </p>
   </div>
+
+  <div id="area-calculator">
+    <h3>Rectangle Area Calculator</h3>
+    <form id="rectangle-form">
+      <label for="length">Length:</label><br>
+      <input type="number" id="length" step="any" placeholder="Enter length"><br>
+      <label for="width">Width:</label><br>
+      <input type="number" id="width" step="any" placeholder="Enter width"><br>
+      <button type="button" onclick="CalculateArea()">Calculate Area</button>
+    </form>
+      <div id="results" style="margin-top: 15px;"></div>
+  </div>
+
   <div id="webmap-reviews">
     <p>
       <h3>Webmap Reviews</h3>

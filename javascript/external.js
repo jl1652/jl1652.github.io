@@ -14,7 +14,27 @@ message = "<h1>Hello, welcome to my webpage, " + user_name + "!</h1>"
 return message
 }
 document.write(welcome());
+//
+function CalculateArea()
+{
+//let a = "Input length and width of a rectangle:";
+let lengthInput = document.getElementById("length").value;
+let widthInput = document.getElementById("width").value;
+let result = document.getElementById("results");
+let length = parseFloat(lengthInput);
+let width = parseFloat(widthInput);
 
+if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+    result.innerHTML = "Please enter numbers for length and width.";
+    return;
+    }
+let area = length * width;
+      result.innerHTML = "The area of the rectangle is: " + area;
+  }
+//user_name = window.prompt(a, b, c);
+
+//document.write(welcome());
+//
 function webmap_table()
 {
   document.write("<table width=100% style='table-layout:fixed;border-collapse: collapse;'>");
