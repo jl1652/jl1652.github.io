@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
+  <script src="javascript/secret_keys.js"></script>
   <meta charset="utf-8">
-<meta name = "viewport" content = "width=device-width, initial- scale=1.0" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
-integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-
-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+  <meta name = "viewport" content = "width=device-width, initial- scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"></script>
+
   <title>Josh Lambert</title>
   <!-- All Styling for this HTML document are contained in this external css
   file -->
@@ -73,13 +73,12 @@ NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto; bottom: 30px;">
 <script>
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?access_token={accessTo
-ken}', {maxZoom: 18, id: 'mapbox.mapbox-traffic-v1', accessToken:
-mapbox_access_token}).addTo(mymap);
-</script>
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  maxZoom: 18,
+  id: 'mapbox/streets-v11',
+  accessToken: mapbox_access_token
+}).addTo(mymap);</script>
 </div>
-
-
 
 <div id="copyright">
   <script>
