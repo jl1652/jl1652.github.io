@@ -1,16 +1,19 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
-  //<script src="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js"></script>
-
-  <script src="javascript/secret_keys.js"></script>
   <meta charset="utf-8">
   <meta name = "viewport" content = "width=device-width, initial- scale=1.0" />
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"></script>
+
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+  <script src="javascript/secret_keys.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
   <link rel="stylesheet" type="text/css" href="css/map_style.css">
-<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"></script>
+  <!--<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"></script>-->
 
   <title>Josh Lambert</title>
   <!-- All Styling for this HTML document are contained in this external css
@@ -77,6 +80,7 @@
 <br>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto; bottom: 30px;">
 <script>
+
 //var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 var mymap = L.map('mapid');
@@ -89,9 +93,8 @@ var mymap = L.map('mapid');
 //L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {}).addTo(mymap);
 //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
 //L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {}).addTo(mymap);
-//L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {}).addTo(mymap);
-
+L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
+/*
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
 var circle = L.circle([51.508, -0.11], { color: 'red', fillColor: '#f03',
 fillOpacity: 0.5, radius: 500}).addTo(mymap);
@@ -103,7 +106,7 @@ polygon.bindPopup("I am a polygon.");
 marker.on('click', function(e){ mymap.setView(e.latlng, 14);})
 circle.on('click', function(e){ mymap.setView(e.latlng, 13);})
 polygon.on('click', function(e){ mymap.setView(e.latlng, 13);})
-
+var polyline = L.polyline([[51.506, -0.08], [51.502, -0.06], [51.507, -0.047]]).addTo(mymap);
 var ZoomViewer = L.Control.extend({ onAdd: function(){
 var gauge = L.DomUtil.create('div');
 gauge.style.width = '200px';
@@ -116,6 +119,21 @@ return gauge;
 }
 });
 (new ZoomViewer).addTo(mymap);
+*/
+var geocoder = L.Control.geocoder({
+defaultMarkGeocode: false,
+geocoder: new L.Control.Geocoder.Nominatim()
+}).on('markgeocode', function(e) {
+var bbox = e.geocode.bbox;
+var poly = L.polygon([
+bbox.getSouthEast(),
+bbox.getNorthEast(),
+bbox.getNorthWest(),
+bbox.getSouthWest()
+]);
+mymap.fitBounds(poly.getBounds());
+}).addTo(mymap);
+
 mymap.setView([0,0], 1);
 </script>
 </div>
